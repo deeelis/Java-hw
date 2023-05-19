@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: '2021092508'
+      author: 'author8'
+      changes:
+        - createTable:
+            tableName: 'users'
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: users_id_pk
+              - column:
+                  name: login
+                  type: varchar(255)
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: summ
+                  type: bigint
+              - column:
+                  name: timestamp
+                  type: timestamp
+  - changeSet:
+      id: '2021092507'
+      author: 'author7'
+      changes:
+        - createTable:
+            tableName: 'transactions'
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: transactions_id_pk
+              - column:
+                  name: user1
+                  type: bigint
+              - column:
+                  name: user2
+                  type: bigint
+              - column:
+                  name: summ
+                  type: bigint
+  - changeSet:
+      id: '2021092509'
+      author: 'author9'
+      changes:
+        - createTable:
+            tableName: 'roles'
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: roles_id_pk
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: users_id
+                  type: bigint
